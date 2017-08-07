@@ -1,11 +1,11 @@
-#!"C:\xampp\php\php-cgi.exe"
+#!"C:\xampp\php\php.exe"
 <?php
     echo "Content-type:application/json; charset=utf-8\r\n\r\n";
 
     $connect = mysqli_connect('localhost','root','');
     mysqli_select_db($connect, 'webservices');
     
-    $result = mysqli_query($connect, "SELECT * FROM news LIMIT 50");
+    $result = mysqli_query($connect, "SELECT * FROM news LIMIT 5000");
     $array = mysqli_fetch_all($result);
     
     for ($i = 0; $i < sizeof($array); $i++) {

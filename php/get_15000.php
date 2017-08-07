@@ -5,7 +5,7 @@
     $connect = mysqli_connect('localhost','root','');
     mysqli_select_db($connect, 'webservices');
     
-    $result = mysqli_query($connect, "SELECT * FROM news");
+    $result = mysqli_query($connect, "SELECT * FROM news LIMIT 15000");
     $array = mysqli_fetch_all($result);
     
     for ($i = 0; $i < sizeof($array); $i++) {

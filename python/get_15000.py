@@ -5,7 +5,9 @@ import re
 
 print "Content-type:application/json; charset=utf-8\r\n\r\n"
 
-db = MySQLdb.connect("localhost","root","","webservices")
+db = MySQLdb.connect("localhost", "root", "", "webservices")
+
+cursor.execute("SELECT * FROM news 15000")
 array = list(cursor.fetchall())
 
 for i in xrange(0, len(array)):
